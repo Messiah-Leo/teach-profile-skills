@@ -48,4 +48,3 @@ At the end of each substantial lesson, the assistant should ask you to explain t
 ## Privacy
 
 This public package contains templates only. Replace placeholder examples with your own information locally. Do not commit personal learner profiles, private research details, note-vault paths, or project-specific data unless you intend them to be public.
-
