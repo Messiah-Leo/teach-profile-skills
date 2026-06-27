@@ -1,0 +1,5 @@
+interface:
+  display_name: "Learner Profile Teach"
+  short_description: "Personalized teaching profile for stepwise learning"
+  default_prompt: "Use $learner-profile-teach and $teach to personalize this learning session before teaching."
+

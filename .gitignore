@@ -1,0 +1,12 @@
+.DS_Store
+work/
+outputs/
+*.zip
+*.tar.gz
+learning-records/
+lessons/
+reference/
+NOTES.md
+MISSION.md
+RESOURCES.md
+
