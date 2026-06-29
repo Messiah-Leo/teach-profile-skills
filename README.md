@@ -38,8 +38,10 @@ skills/
   learner-profile-teach/
     SKILL.md
     agents/openai.yaml
+    scripts/
     references/
     templates/
+    local-sync-config.example.json
 docs/
   INSTALL.md
   CUSTOMIZATION.md
@@ -67,6 +69,27 @@ automatically.
 
 For more detail, see [docs/INSTALL.md](docs/INSTALL.md).
 
+## Obsidian Sync Setup
+
+If you keep the stable learner profile in Obsidian, create a local config after
+installing:
+
+```bash
+cp "${CODEX_HOME:-$HOME/.codex}/skills/learner-profile-teach/local-sync-config.example.json" \
+  "${CODEX_HOME:-$HOME/.codex}/skills/learner-profile-teach/local-sync-config.json"
+```
+
+Edit `vault_path` for the current machine. On Windows, the same file can point
+to a synced vault such as `C:\\Users\\YOU\\Documents\\Coffers`; on macOS, it can
+point to `~/Documents/Coffers`.
+
+Then run:
+
+```bash
+cd "${CODEX_HOME:-$HOME/.codex}/skills/learner-profile-teach"
+python scripts/install_or_repair.py --write-bases --validate
+```
+
 ## Personalize
 
 Before using `learner-profile-teach`, copy the package locally and edit:
@@ -77,6 +100,10 @@ Before using `learner-profile-teach`, copy the package locally and edit:
 
 Keep these files concise. Store stable cross-course patterns there, not
 lesson-by-lesson notes.
+
+When using Obsidian Sync, keep the stable profile source in
+`Self/learner-profile/` and let `scripts/sync_learner_profile.py` copy it into
+the installed skill's `references/` cache before teaching.
 
 For guidance, see [docs/CUSTOMIZATION.md](docs/CUSTOMIZATION.md).
 

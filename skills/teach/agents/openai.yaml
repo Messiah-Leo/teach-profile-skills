@@ -1,0 +1,4 @@
+interface:
+  display_name: "Teach"
+  short_description: "Stateful lessons with durable notes"
+  default_prompt: "Use $teach to teach me this topic with a stateful course workspace."

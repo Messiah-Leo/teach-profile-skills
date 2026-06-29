@@ -8,7 +8,7 @@ After every five substantial lessons in a learning thread, review whether a prof
 
 ## What Counts As A Substantial Lesson
 
-A lesson counts when it includes a coherent concept or skill unit and the learner has a chance to respond, practice, or self-explain.
+A lesson counts when it includes a coherent concept or skill unit and the user has a chance to respond, practice, or self-explain.
 
 Short clarifications, one-off answers, formatting help, or administrative tasks do not count.
 
@@ -19,7 +19,7 @@ Propose a profile update only when evidence is:
 - repeated across multiple lessons, or
 - explicitly stated by the user as a preference or goal, or
 - clearly cross-course useful, or
-- likely to materially improve future teaching or collaboration.
+- likely to materially improve future teaching or research collaboration.
 
 ## Good Profile Update Candidates
 
@@ -27,7 +27,7 @@ Propose a profile update only when evidence is:
 - Interest patterns.
 - Recurring difficulty patterns.
 - Preferred transfer contexts.
-- Research or work workflow changes.
+- Research workflow changes.
 - Toolchain or implementation workflow changes.
 - Long-term planning or cognition patterns explicitly confirmed by the user.
 - User-confirmed instructions such as "remember this" or "teach me this way".
@@ -37,14 +37,14 @@ Propose a profile update only when evidence is:
 - A single lesson topic.
 - A temporary mood.
 - One-off task details.
-- File paths or project details unlikely to recur.
+- File paths or project details that are unlikely to recur.
 - Unconfirmed psychological labels.
 - Private or sensitive inferences not explicitly confirmed.
-- Anything that belongs only in the current course workspace.
+- Anything that belongs only in the current course's teach workspace.
 
 ## Five-Lesson Review Procedure
 
-1. Gather the last five substantial lessons, self-explanations, learning records, and notes if available.
+1. Gather the last five substantial lessons, self-explanations, learning records, and Obsidian notes if available.
 2. Identify interest signals, difficulty signals, pacing signals, and transfer-context signals.
 3. Separate course-local facts from global learner-profile candidates.
 4. Draft a profile update proposal only if there is enough evidence.
@@ -54,11 +54,10 @@ Propose a profile update only when evidence is:
 ## File Targets
 
 - `global-profile.md`: identity, durable goals, broad workstream, stable cross-course profile.
-- `research-workflow.md`: field-specific research, implementation, validation, or integration patterns.
+- `research-workflow.md`: electromagnetic computation, derivation, implementation, validation, tool integration patterns.
 - `teaching-protocol.md`: teaching style, self-explanation, concept coverage, pacing.
 - `cognition-and-planning.md`: planning, direction, emotion regulation, and cognitive methodology patterns.
 
 ## Proposal Requirement
 
 Use `templates/profile-update-proposal.md` before editing stable profile files unless the user explicitly instructs an exact update.
-

@@ -6,7 +6,7 @@ categories:
 course: "[[Course Name]]"
 lessons_reviewed: []
 profile_candidate: false
-summary: "Five-lesson review decision."
+summary: "Review decision."
 created: "{{date}}"
 updated: "{{date}}"
 source_skill:
@@ -15,17 +15,13 @@ tags:
   - codex/review
 ---
 
-# Five-Lesson Review: {{title}}
+# {{title}}
 
 ## Lessons Reviewed
 
-- Lesson 1:
-- Lesson 2:
-- Lesson 3:
-- Lesson 4:
-- Lesson 5:
+-
 
-## Evidence From User Self-Explanations
+## Evidence From Self-Explanations
 
 ### Concepts Handled Well
 
@@ -53,21 +49,12 @@ tags:
 
 ## Course-Local Notes
 
-These should remain in the teach workspace or Obsidian:
-
 -
 
 ## Global Profile Candidates
 
-These may be worth proposing for learner-profile updates:
-
 -
 
 ## Recommendation
-
-- No profile update needed.
-- Profile update proposal recommended.
-
-## Reason
 
 -

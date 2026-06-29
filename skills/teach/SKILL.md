@@ -1,96 +1,85 @@
 ---
 name: teach
-description: Teach the user a new skill or concept over multiple sessions. Use when the user asks to learn, study, continue a course, create lessons, build a learning path, or practice a concept with feedback. Maintains a teaching workspace with mission, resources, lessons, learning records, reference documents, and optional note-app mirroring.
+description: Teach the user a new skill or concept in a stateful workspace. Use for "teach me", "help me learn", lessons, courses, next lesson, learning plans, study workflows, 教我, 教会我, 带我学, 学一下, 讲一下, 给我上一课, 继续上一课. When learner-profile-teach is installed, use it first for Obsidian learner-profile sync and personalization, then manage the course workspace, lessons, records, references, and Obsidian mirrored notes.
 ---
 
 # Teach
 
-The user has asked to learn something over time. Treat the current directory as a teaching workspace and maintain learning state there.
+The user has asked to learn something over one or more sessions. Treat the
+current directory as the course workspace.
+
+## Companion Profile
+
+When `learner-profile-teach` is installed, use it before substantial teaching:
+
+1. Run its Obsidian profile sync workflow.
+2. Read the relevant learner-profile references.
+3. Return here to manage the course workspace and lesson artifacts.
+
+If the companion skill is unavailable, continue with `teach` and say that
+personalized profile sync was skipped.
 
 ## Teaching Workspace
 
-Use these files and folders:
+Maintain these files and folders as needed:
 
-- `MISSION.md`: why the user is learning this topic. Use `MISSION-FORMAT.md`.
-- `RESOURCES.md`: trusted resources for this topic. Use `RESOURCES-FORMAT.md`.
-- `NOTES.md`: teaching notes and user preferences that are local to this course.
-- `learning-records/*.md`: durable records of demonstrated understanding, prior knowledge, corrected misconceptions, or mission shifts. Use `LEARNING-RECORD-FORMAT.md`.
-- `lessons/*.html`: short, self-contained lesson artifacts.
-- `reference/*.html` or `reference/*.md`: concise review references, cheat sheets, glossaries, algorithms, or concept cards.
-- `GLOSSARY.md` when a canonical vocabulary is useful. Use `GLOSSARY-FORMAT.md`.
+- `MISSION.md`: why the user is learning this topic. Use
+  `MISSION-FORMAT.md`.
+- `RESOURCES.md`: trusted sources and communities. Use
+  `RESOURCES-FORMAT.md`.
+- `learning-records/*.md`: decision-grade learning records. Use
+  `LEARNING-RECORD-FORMAT.md`.
+- `lessons/*.html`: self-contained lesson artifacts.
+- `reference/*.html`: durable reference documents, cheat sheets, algorithms, or
+  glossaries.
+- `NOTES.md`: local course notes and teaching preferences.
 
-## Optional Note-App Mirror
+## Obsidian Mirror Rule
 
-If the user asks to mirror lessons, thoughts, derivations, or progress into a note app, treat that mirror as part of the deliverable.
+Obsidian is part of the deliverable when the user asks to record lessons,
+thoughts, derivations, course progress, concept cards, or review evidence. Use
+the configured vault from the companion profile skill, an explicit user path, or
+a local `~/Documents/Coffers` vault when it exists.
 
-- Ask for or infer the note destination only when appropriate.
-- Keep mirrored notes recall-oriented: concise headings, key definitions, small examples, and self-test questions.
-- Verify mirrored files exist before finishing.
-- Keep the note mirror separate from the workspace so course artifacts and review notes have clear roles.
+Use the Obsidian integration references from `learner-profile-teach` when
+available:
 
-## Teaching Philosophy
+- `references/obsidian-properties-schema.md`
+- `references/obsidian-linking-policy.md`
+- `references/obsidian-cli-protocol.md`
+- `references/obsidian-bases.md`
+- `references/validation.md`
 
-Deep learning needs:
+Write course material under the vault's `Skills/` folder unless the user
+specifies another vault path or topic folder. Keep Obsidian notes recall-
+oriented: concise headings, key definitions, small examples, self-test
+questions, and links to course/concept/proposal evidence. Verify written notes
+with `obsidian` CLI when available.
 
-- knowledge from high-quality sources,
-- skills built through practice and feedback,
-- wisdom from real-world use and community interaction when relevant.
+## Teaching Method
 
-Do not rely only on parametric memory when the topic needs current, precise, or source-grounded knowledge. Populate `RESOURCES.md` with high-trust sources early.
+Tie every lesson to the mission. If the mission is unclear, interview the user
+before writing `MISSION.md`.
 
-## Mission First
+For substantial lessons:
 
-Every lesson should serve the mission. If the user has not explained why they want to learn the topic, ask enough to write a concrete `MISSION.md`.
-
-Good missions are observable and practical:
-
-- "Ship a Rust CLI to my team" is better than "learn Rust".
-- "Read and critique papers in this field" is better than "understand the field".
-
-Revise `MISSION.md` when the user's goal changes, and create a learning record for meaningful mission shifts.
-
-## Lesson Design
-
-A lesson is the main unit of teaching. It should be short, beautiful, and useful for review.
-
-Each lesson should:
-
-1. teach one tightly scoped concept or skill,
-2. connect to the mission,
-3. introduce only the necessary knowledge,
-4. include practice or retrieval,
-5. provide feedback when the user responds,
-6. link to relevant references or prior lessons,
-7. recommend at least one high-trust resource when appropriate.
-
-Prefer small steps. Working memory is limited; durable learning benefits from retrieval, spacing, interleaving when appropriate, and desirable difficulty.
-
-## Learning Records
-
-Write learning records only when there is evidence:
-
-- the user demonstrated understanding,
-- the user disclosed meaningful prior knowledge,
-- a misconception was corrected,
-- the mission shifted.
-
-Do not write records for mere coverage. Learning records are decision-grade signals for future teaching, not session logs.
+1. Teach one tightly scoped concept or skill.
+2. Use trusted resources before relying on memory.
+3. Explain the minimal terminology, definition, common confusion, small example,
+   domain transfer, and practice loop.
+4. Build storage strength with retrieval, spacing, and interleaving where useful.
+5. Ask for the user's self-explanation and use it to decide whether to correct,
+   deepen, or move on.
 
 ## Reference Documents
 
-Create reference documents for reusable knowledge:
+Create reference documents for durable reusable knowledge, not for session logs.
+Glossaries are canonical language for the workspace; add a term only once the
+user can use it correctly.
 
-- glossaries,
-- algorithms,
-- syntax cards,
-- concept maps,
-- procedures,
-- exercises,
-- review sheets.
+## Boundaries
 
-Reference documents should compress what the user can return to later. They should not duplicate every lesson.
-
-## Feedback Loop
-
-When possible, end lessons with a user action: explain, solve, apply, compare, or transfer. Use the response to decide whether to correct, deepen, or move on.
-
+Do not let lessons become loose motivational summaries. Do not record mere
+coverage as learning. Do not silently change the mission or the stable learner
+profile. Confirm meaningful mission changes and leave profile updates to the
+companion profile workflow.
